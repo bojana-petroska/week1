@@ -1,10 +1,6 @@
 import { Genre, BookDetails } from './Types';
 import { Book } from './Book';
-
-interface LibraryDetails {
-  name: string;
-  address: string;
-}
+import { LibraryDetails } from './Types';
 
 class Library {
   private _name: string;
@@ -51,9 +47,10 @@ library1.addBook({
   genre: 'Poetry',
 });
 
-console.log(library1);
+console.log('Library before removing the book:');
+console.log(library1.getBooks());
 
 library1.removeBook('Longing for the South');
-console.log(library1);
 
-library1.getBooks();
+console.log('Library after removing the book:');
+console.log(library1.getBooks());

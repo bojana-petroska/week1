@@ -7,4 +7,9 @@ export interface BookDetails {
     genre: Genre
 }
 
+export interface LibraryDetails {
+    name: string;
+    address: string;
+  }
+
 console.log('bo');
