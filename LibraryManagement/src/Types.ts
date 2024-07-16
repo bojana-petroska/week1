@@ -4,7 +4,11 @@ export interface BookDetails {
     title: string,
     author: string,
     publishedYear: number,
-    genre: Genre
+    genre: Genre,
+    format?: DigitalBookFormat;
+    fileSize?: number;
+    duration?: number,
+    narrator?: string
 }
 
 export interface LibraryDetails {
@@ -12,4 +16,10 @@ export interface LibraryDetails {
     address: string;
   }
 
-console.log('bo');
+export enum DigitalBookFormat {
+  pdf = 'PDF', 
+  epub = 'EPUB', 
+  mobi = 'MOBI', 
+  audio = 'AUDIO'
+}
+

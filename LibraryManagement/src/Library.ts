@@ -1,6 +1,5 @@
-import { Genre, BookDetails } from './Types';
+import { BookDetails, LibraryDetails } from './Types';
 import { Book } from './Book';
-import { LibraryDetails } from './Types';
 
 class Library {
   private _name: string;
