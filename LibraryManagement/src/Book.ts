@@ -75,7 +75,7 @@ const newBook = new Book({
     title: 'Longing for the South',
     author: 'Konstantin Miladinov',
     publishedYear: 1860,
-    genre: 'Poetry'
+    genre: Genre.poetry
 });
 
 console.log(newBook.getBookDetails());

@@ -1,49 +1,46 @@
 import { Book } from './Book';
-import { DigitalBookFormat, BookDetails } from './Types';
+import { DigitalBookFormat, DigitalBookDetails } from './Types';
 
 export class DigitalBook extends Book {
-  format: DigitalBookFormat;
-  fileSize: number;
+  private _format: DigitalBookFormat;
+  private _fileSize: number;
 
-  constructor(
-    bookDetails: BookDetails,
-    format: DigitalBookFormat,
-    fileSize: number
-  ) {
-    super(bookDetails);
-    this.format = format;
-    this.fileSize = fileSize;
+  constructor(digitalBookDetails: DigitalBookDetails) {
+    super(digitalBookDetails);
+    this._format = digitalBookDetails.format;
+    this._fileSize = digitalBookDetails.fileSize;
   }
 
-  get getFormat(): DigitalBookFormat {
-    return this.format;
+  get format(): DigitalBookFormat {
+    return this._format;
   }
 
-  set setFormat(input: DigitalBookFormat) {
-    if ((<any>Object).values(DigitalBookFormat).includes(input)) {
-      this.format = input;
+  set format(newFormat: DigitalBookFormat) {
+    if ((<any>Object).values(DigitalBookFormat).includes(newFormat)) {
+      this._format = newFormat;
     } else {
       console.log(`ERROR: Invalid format!`);
     }
   }
 
-  get getFileSize(): number {
-    return this.fileSize;
+  get fileSize(): number {
+    return this._fileSize;
   }
 
-  set setFileSize(input: number) {
-    if (input > 0) {
-      this.fileSize = input;
+  set fileSize(newFileSize: number) {
+    if (newFileSize > 0) {
+      this._fileSize = newFileSize;
     } else {
       console.log(`ERROR: Invalid file size!`);
     }
   }
 
-  getBookDetails(): BookDetails {
+  getBookDetails(): DigitalBookDetails {
     return {
       ...super.getBookDetails(),
-      format: this.format,
-      fileSize: this.fileSize,
+      format: this._format,
+      fileSize: this._fileSize,
     };
   }
+
 }
