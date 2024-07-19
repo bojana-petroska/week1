@@ -9,6 +9,7 @@ export class AudioBook extends DigitalBook {
     super(audioBookDetails);
     this._duration = audioBookDetails.duration;
     this._narrator = audioBookDetails.narrator;
+    console.log(this._duration, this._narrator)
   }
 
   get getDuration(): number {
@@ -36,6 +37,7 @@ export class AudioBook extends DigitalBook {
   }
 
   getBookDetails(): AudioBookDetails {
+    console.log(this._duration, this._narrator)
     return {
       ...super.getBookDetails(),
       duration: this._duration,

@@ -1,10 +1,3 @@
-// export type Genre =
-//   | 'Fiction'
-//   | 'Non-Fiction'
-//   | 'Science'
-//   | 'Biography'
-//   | 'Poetry'
-
 export enum Genre {
   fiction = 'Fiction',
   nonFiction = 'Non-Fiction',
@@ -12,14 +5,12 @@ export enum Genre {
   biography = 'Biography',
   poetry = 'Poetry'
 }
-
 export interface BookDetails {
   title: string;
   author: string;
   publishedYear: number;
   genre: Genre;
 }
-
 export interface LibraryDetails {
   name: string;
   address: string;
@@ -31,12 +22,10 @@ export enum DigitalBookFormat {
   mobi = 'MOBI',
   audio = 'AUDIO',
 }
-
 export interface DigitalBookDetails extends BookDetails {
   fileSize: number;
   format: DigitalBookFormat;
 }
-
 export interface AudioBookDetails extends DigitalBookDetails {
   duration: number;
   narrator: string;

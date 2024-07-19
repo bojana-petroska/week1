@@ -1,7 +1,8 @@
+import { AbstractBook } from './AbstractBook';
 import { Book } from './Book';
-import { DigitalBookFormat, DigitalBookDetails } from './Types';
+import { DigitalBookFormat, DigitalBookDetails, Genre } from './Types';
 
-export class DigitalBook extends Book {
+export class DigitalBook extends AbstractBook {
   private _format: DigitalBookFormat;
   private _fileSize: number;
 
@@ -37,7 +38,10 @@ export class DigitalBook extends Book {
 
   getBookDetails(): DigitalBookDetails {
     return {
-      ...super.getBookDetails(),
+      title: this.title,
+      author: this.author,
+      publishedYear: this.publishedYear,
+      genre: this.genre,
       format: this._format,
       fileSize: this._fileSize,
     };
